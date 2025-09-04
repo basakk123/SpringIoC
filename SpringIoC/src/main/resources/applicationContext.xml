@@ -4,19 +4,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<!-- polymorphism3 패키지로 시작하는 모든 클래스들 중, @Component가 붙은 클래스를 찾아서(Scan) 객체 생성해라. -->					
+	<context:component-scan base-package="polymorphism3"></context:component-scan>
 	
 	<!-- Spring이 생성해야하는 객체를 등록한다.
 	<bean id="tv" 
 		class="polymorphism3.SamsungTV"
 		init-method="멤버변수초기화"
 		destroy-method="자원해제"></bean>
-	 -->
 	 
-	 <bean id="speaker" class="polymorphism3.SonySpeaker"></bean>
+	 
+	 <bean id="speaker" class="polymorphism3.AppleSpeaker"></bean>
 	 
 	 <bean id="tv" class="polymorphism3.GoogleTV">
-	 	<constructor-arg ref="speaker"></constructor-arg>
-	 	<constructor-arg value="1800000"></constructor-arg>
+		<property name="speaker" ref="speaker"></property>
+		<property name="price" value="1700000"></property>
 	 </bean>
+	 -->
+	 
+	 
 	 
 </beans>
