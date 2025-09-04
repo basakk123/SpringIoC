@@ -1,19 +1,34 @@
 package polymorphism3;
 
 public class GoogleTV implements TV {
+	private SonySpeaker speaker;
+	private int price;
+	
 	public GoogleTV() {
-		System.out.println("===> GoogleTV 생성");
+		System.out.println("===> GoogleTV(1) 생성");
 	}
+	
+	public GoogleTV(SonySpeaker speaker) {
+		System.out.println("===> GoogleTV(2) 생성");
+		this.speaker = speaker;
+	}
+	
+	public GoogleTV(SonySpeaker speaker, int price) {
+		System.out.println("===> GoogleTV(3) 생성");
+		this.speaker = speaker;
+		this.price = price;
+	}
+
 	public void powerOn() {
-		System.out.println("GoogleTV---전원 켠다.");
+		System.out.println("GoogleTV---전원 켠다." + price);
 	} 
 	public void powerOff() {
 		System.out.println("GoogleTV---전원 끈다.");
 	} 
 	public void volumeUp() {
-		System.out.println("GoogleTV---소리 올린다.");
+		speaker.volumeUp();
 	} 
 	public void volumeDown() {
-		System.out.println("GoogleTV---소리 내린다.");
+		speaker.volumeDown();
 	} 
 }

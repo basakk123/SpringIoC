@@ -14,5 +14,8 @@ public class TVUser {
 		tv.volumeUp();
 		tv.volumeDown();
 		tv.powerOff();
+		
+		// Spring 컨테이너를 종료한다.
+		container.close();
 	}
 }
