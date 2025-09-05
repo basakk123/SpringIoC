@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.multicampus.biz.common.JDBCUtil;
 
 //DAO (Data Access Object) : 실질적인 DB 연동 처리를 담당하는 클래스
-@Component
+@Repository
 public class BoardDAO {
 	// JDBC 관련 변수
 	private Connection conn;

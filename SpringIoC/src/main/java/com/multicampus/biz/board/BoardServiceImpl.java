@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 // 비즈니스 로직 처리를 담당하는 클래스
-@Component("boardService")
+@Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	
 	@Autowired
